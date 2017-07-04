@@ -289,7 +289,9 @@ class Mock(MagicMock):
     def __getattr__(cls, name):
             return MagicMock()
 
-MOCK_MODULES = ['numpy', 'scipy', 'libstempo', 'ephem', 'sksparse.cholmod']
+MOCK_MODULES = ['numpy', 'scipy', 'libstempo', 'ephem', 'sksparse.cholmod',
+                'scipy.sparse', 'scipy.constants', 'scipy.interpolate',
+                'scipy.stats']
 sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 # allows readthedocs to auto-generate docs
