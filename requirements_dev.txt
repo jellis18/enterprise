@@ -13,4 +13,5 @@ sphinx-rtd-theme>=0.1.9
 pytest-cov>=2.4.0
 coveralls>=1.1
 jupyter>=1.0.0
+nbconvert>=5.1.1
 mock>=2.0.0
