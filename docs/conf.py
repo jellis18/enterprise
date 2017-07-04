@@ -300,8 +300,12 @@ def run_apidoc(_):
     output_path = os.path.abspath(os.path.dirname(__file__))
     # make docs from notebooks
     nb = '_static/notebooks/*.ipynb'
+    cmd_path = 'jupyter'
+        if hasattr(sys, 'real_prefix'):  # Check to see if we are in a virtualenv
+            # If we are, assemble the path manually
+            cmd_path = os.path.abspath(os.path.join(sys.prefix, 'bin', 'jupyter'))
     print(os.getcwd())
-    subprocess.check_call(['jupyter nbconvert --template nb-rst.tpl --to rst',
+    subprocess.check_call([cmd_path, 'nbconvert --template nb-rst.tpl --to rst',
                            nb, '--output-dir', output_path])
 
     modules = ['../enterprise']
