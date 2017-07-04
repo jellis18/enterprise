@@ -304,9 +304,9 @@ def run_apidoc(_):
     if hasattr(sys, 'real_prefix'):  # Check to see if we are in a virtualenv
         # If we are, assemble the path manually
         cmd_path = os.path.abspath(os.path.join(sys.prefix, 'bin', 'jupyter'))
-    print(os.getcwd())
-    subprocess.check_call([cmd_path, 'nbconvert --template nb-rst.tpl --to rst',
-                           nb, '--output-dir', output_path])
+    os.system('pwd')
+    #subprocess.check_call([cmd_path, 'nbconvert --template nb-rst.tpl --to rst',
+#                           nb, '--output-dir', output_path])
 
     modules = ['../enterprise']
     for module in modules:
