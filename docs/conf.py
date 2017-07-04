@@ -306,7 +306,8 @@ def run_apidoc(_):
         cmd_path = os.path.abspath(os.path.join(sys.prefix, 'bin', 'jupyter'))
     os.system('which jupyter')
     os.system('ls')
-    print(output_path)
+    os.system('jupyter nbconvert -h')
+
     #subprocess.check_call([cmd_path, 'nbconvert --template nb-rst.tpl --to rst',
 #                           nb, '--output-dir', output_path])
 
