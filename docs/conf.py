@@ -304,7 +304,7 @@ def run_apidoc(_):
     if hasattr(sys, 'real_prefix'):  # Check to see if we are in a virtualenv
         # If we are, assemble the path manually
         cmd_path = os.path.abspath(os.path.join(sys.prefix, 'bin', 'jupyter'))
-    os.sytem('ls _static/notebooks')
+    os.system('ls _static/notebooks')
     os.system('jupyter nbconvert --template docs/nb-rst.tpl --to rst _static/notebooks/*.ipynb --output-dir {}'.format(output_path))
 
     #subprocess.check_call([cmd_path, 'nbconvert --template nb-rst.tpl --to rst',
