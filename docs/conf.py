@@ -300,6 +300,7 @@ def run_apidoc(_):
     output_path = os.path.abspath(os.path.dirname(__file__))
     # make docs from notebooks
     nb = '_static/notebooks/*.ipynb'
+    print(os.getcwd())
     subprocess.check_call(['jupyter nbconvert --template nb-rst.tpl --to rst',
                            nb, '--output-dir', output_path])
 
