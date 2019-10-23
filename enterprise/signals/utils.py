@@ -16,6 +16,7 @@ from scipy.interpolate import interp1d
 
 import enterprise
 import enterprise.constants as const
+import enterprise.signals as sigs  # noqa: F401
 from enterprise.signals.gp_bases import (  # noqa: F401
     createfourierdesignmatrix_chromatic,
     createfourierdesignmatrix_dm,
